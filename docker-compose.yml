@@ -38,5 +38,12 @@ services:
     expose:
       - "8080"
 
+  prometheus:
+    image: prom/prometheus:v1.6.1
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+
 networks:
   envoymesh: {}
